@@ -1,0 +1,1 @@
+C:\Users\Kong\Documents\Visual Studio 2015\Projects\AirLine Project\WpfApplication2\JsonFileWriter\JsonFileWriter\obj\Debug\JsonFileWriter.csprojResolveAssemblyReference.cache

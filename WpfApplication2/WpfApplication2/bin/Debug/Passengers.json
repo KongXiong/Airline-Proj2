@@ -1,5 +1,13 @@
 [
   {
+    "Name": "Kong Xiong",
+    "Origin": "mke",
+    "Destination": "ATL",
+    "FlightNumber": 0,
+    "Seat": "AOne",
+    "TravelDate": "2/28/2016"
+  },
+  {
     "Name": "TextBox123",
     "Origin": "mke",
     "Destination": "ATL",

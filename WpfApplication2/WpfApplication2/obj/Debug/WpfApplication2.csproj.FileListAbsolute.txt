@@ -62,3 +62,6 @@ C:\Users\Kong\Documents\Visual Studio 2015\Projects\AirLine Project\WpfApplicati
 C:\Users\Kong\Documents\Visual Studio 2015\Projects\AirLine Project\WpfApplication2\WpfApplication2\bin\Debug\Google.Apis.pdb
 C:\Users\Kong\Documents\Visual Studio 2015\Projects\AirLine Project\WpfApplication2\WpfApplication2\bin\Debug\Google.Apis.xml
 C:\Users\Kong\Documents\Visual Studio 2015\Projects\AirLine Project\WpfApplication2\WpfApplication2\obj\Debug\WpfApplication2.csproj.WpfApplication2.exe.config
+C:\Users\Kong\Documents\devcodecamp projects\devCodeVS\Airline-Proj\Airline-Proj2\WpfApplication2\WpfApplication2\bin\Debug\WpfApplication2.exe.config
+C:\Users\Kong\Documents\devcodecamp projects\devCodeVS\Airline-Proj\Airline-Proj2\WpfApplication2\WpfApplication2\obj\Debug\WpfApplication2.exe
+C:\Users\Kong\Documents\devcodecamp projects\devCodeVS\Airline-Proj\Airline-Proj2\WpfApplication2\WpfApplication2\obj\Debug\WpfApplication2.pdb

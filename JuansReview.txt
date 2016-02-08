@@ -1,0 +1,5 @@
+I was trying to work with Google services
+gmail was easy, some complication with google calendar
+
+gui need improvements
+also the google calendar writer

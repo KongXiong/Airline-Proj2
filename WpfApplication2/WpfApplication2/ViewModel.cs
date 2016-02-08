@@ -1,12 +1,13 @@
 ﻿using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using System;
+using Airline_proj;
 
 namespace WpfApplication2
 {
     public class ComboboxViewModel
     {
-        public ObservableCollection<Passengers> readJSONFile { get; private set; }
+        public ObservableCollection<Passenger> readJSONFile { get; private set; }
         public ObservableCollection<string> CmbContent { get; private set; }
         public ObservableCollection<string> CmbOrContent { get; private set; }
         public ObservableCollection<string> CmbClassContent { get; private set; }
@@ -23,7 +24,7 @@ namespace WpfApplication2
             CmbClassContent = new ObservableCollection<string>(FD.seatClass);
             columCollect = new ObservableCollection<string>(getColumns());
             rowsCollect = new ObservableCollection<string>(getRows());
-            var readJSONFile = new ObservableCollection<Passengers>(psgList.readFile());
+            var readJSONFile = new ObservableCollection<Passenger>(psgList.readFile());
         }
         public List<string> getColumns()
         {

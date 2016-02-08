@@ -33,5 +33,11 @@ namespace WpfApplication2
             psngrToFile.Jwriter(nameTextBox.Text, datepicksale.Text,(comboBox.Text + comboBox1.Text), comboBoxdest.Text, comboBox1_Copy.Text);
 
         }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            Passengers passngr = new Passengers();
+            passngr.Show();
+        }
     }
 }

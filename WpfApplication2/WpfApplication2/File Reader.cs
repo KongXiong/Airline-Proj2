@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft;
+using Airline_proj;
 
 namespace WpfApplication2
 {
     public class File_Reader
     {
-        List<Passengers> passengers = new List<WpfApplication2.Passengers>();
-        public List<Passengers> readFile()
+        List<Passenger> passengers = new List<Passenger>();
+        public List<Passenger> readFile()
         {
             string json = File.ReadAllText(@"Output.json");
-            passengers = JsonConvert.DeserializeObject<List<Passengers>>(json);
+            passengers = JsonConvert.DeserializeObject<List<Passenger>>(json);
             return passengers;
         }
         //public string fileToString()

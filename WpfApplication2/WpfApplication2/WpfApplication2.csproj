@@ -64,8 +64,8 @@
     <Compile Include="Column.cs" />
     <Compile Include="File Reader.cs" />
     <Compile Include="Flight Dictionary.cs" />
-    <Compile Include="Passengers.xaml.cs">
-      <DependentUpon>Passengers.xaml</DependentUpon>
+    <Compile Include="PassengerGrid.xaml.cs">
+      <DependentUpon>PassengerGrid.xaml</DependentUpon>
     </Compile>
     <Compile Include="passengerViewModel.cs" />
     <Compile Include="Rows.cs" />
@@ -86,7 +86,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Passengers.xaml">
+    <Page Include="PassengerGrid.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

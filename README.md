@@ -1,1 +1,4 @@
 # Airline-Proj2
+Kong's Reflection of this Project
+
+This project was seemingly simple while at the same time complicated.  The simplicity comes with the level of requirements associated with the Airline.  There was an underwhelming level of specificity to the amount of planes, flights, schedules and functionality to the design of the project. The self learning method of each detail that was new to the model and GUI of this project far outweighs whatever simplicity your mind can conjure up about the airline application's design.  I researched logging in, JSON file reading/writing, SQL, databinding, mvvm,  WPF, airplanes, flight manifests and various collections for WPF. There is a plethora of convoluted and outdated information online.  In summary, I developed a far better way of researching infomation online about relevant topics pertaining to my specific goals and that is a great asset.

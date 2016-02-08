@@ -31,13 +31,21 @@ namespace WpfApplication2
         {
             FileWriter psngrToFile = new FileWriter();
             psngrToFile.Jwriter(nameTextBox.Text, datepicksale.Text,(comboBox.Text + comboBox1.Text), comboBoxdest.Text, comboBox1_Copy.Text);
-
+            EmailReceipt email = new EmailReceipt();
+            email.Email(nameTextBox.Text, datepicksale.Text, (comboBox.Text + comboBox1.Text), comboBoxdest.Text, comboBox1_Copy.Text, phonebox.Text);
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             Passengers passngr = new Passengers();
             passngr.Show();
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            GoogleCalViewer CalendarViewer = new GoogleCalViewer();
+            CalendarViewer.Show();
+
         }
     }
 }

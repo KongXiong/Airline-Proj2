@@ -19,12 +19,5 @@ namespace WpfApplication2
             passengers = JsonConvert.DeserializeObject<List<Passenger>>(json);
             return passengers;
         }
-        //public string fileToString()
-        //{
-        //    foreach(Passengers name in passengers)
-        //    {
-
-        //    }
-        //}
     }
 }

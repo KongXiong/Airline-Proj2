@@ -7,7 +7,7 @@ using System.Net.Mail;
 
 namespace Airline_proj
 {
-    class EmailReceipt
+    public class EmailReceipt
     {
        
         List<string> carriers = new List<string>();
@@ -45,11 +45,11 @@ namespace Airline_proj
             string email = Console.ReadLine();
             return email;
         }
-        public void Email()
+        public void Email(string fullName, string travelDate, string seatNumber, string destination, string origin, string phoneNumber)
         {
             CarriersAdd();
-            string phonenumber = PhoneNumber();
-            string msm = Message();
+            string phonenumber = phoneNumber;
+            string msm = "hi";
             SmtpClient client = new SmtpClient();
             client.Port = 587;
             client.Host = "smtp.gmail.com";
@@ -60,7 +60,7 @@ namespace Airline_proj
             client.Credentials = new System.Net.NetworkCredential("devcodeairlines@gmail.com", "juan014642");
             foreach(string carrier in carriers)
             {
-                 MailMessage mm = new MailMessage("devcodeairlines@gmail.com",phonenumber+carrier, "Airplane Ticket Receipt", msm);
+                 MailMessage mm = new MailMessage("devcodeairlines@gmail.com",phoneNumber+carrier, "Airplane Ticket Receipt", msm);
                  mm.BodyEncoding = UTF8Encoding.UTF8;
                  mm.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
                  client.Send(mm);

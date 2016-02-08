@@ -9,12 +9,12 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid Opacity="0.7">
         <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="228,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="228,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="button" Content="Exit" HorizontalAlignment="Left" Margin="165,263,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
         <Button x:Name="button1" Content="Login" HorizontalAlignment="Left" Margin="273,263,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click_1" />
         <Label x:Name="label" Content="UserName :" HorizontalAlignment="Left" Margin="96,95,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label1" Content="Password :" HorizontalAlignment="Left" Margin="96,162,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label2" Content="Login" HorizontalAlignment="Left" Margin="39,26,0,0" VerticalAlignment="Top" Height="49" Width="107" FontSize="26.667" FontFamily="Microsoft YaHei UI" FontWeight="Bold"/>
+        <PasswordBox x:Name="textBox2" HorizontalAlignment="Left" Margin="228,165,0,0" VerticalAlignment="Top" Width="120" Height="23"/>
 
     </Grid>
 </Window>

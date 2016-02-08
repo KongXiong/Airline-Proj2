@@ -26,28 +26,37 @@
         </member>
         <member name="M:Google.Apis.Auth.OAuth2.GoogleCredential.GetApplicationDefaultAsync">
             <summary>
-            <para>Returns the Application Default Credentials which are ambient credentials that identify and authorize 
+            <para>Returns the Application Default Credentials which are ambient credentials that identify and authorize
             the whole application.</para>
             <para>The ambient credentials are determined as following order:</para>
             <list type="number">
-            <item> 
-            <description>The environment variable GOOGLE_APPLICATION_CREDENTIALS is checked. If this variable is specified, it 
-            should point to a file that defines the credentials. The simplest way to get a credential for this purpose is to 
-            create a service account using the <a href="https://console.developers.google.com">Google Developers Console</a> in 
-            the section APIs &amp; Auth, in the sub-section Credentials. Create a service account or choose an existing one and 
-            select Generate new JSON key. Set the environment variable to the path of the JSON file downloaded.</description> 
-            </item> 
-            <item> 
-            <description>If you have installed the Google Cloud SDK on your machine and have run the command 
-            <a href="https://cloud.google.com/sdk/gcloud/reference/auth/login">gcloud auth login</a>, your identity can be used as 
-            a proxy to test code calling APIs from that machine.</description> 
-            </item> 
-            <item> 
-            <description>If you are running in Google Compute Engine production, the built-in service account associated with the 
-            virtual machine instance will be used.</description> 
+            <item>
+            <description>
+            The environment variable GOOGLE_APPLICATION_CREDENTIALS is checked. If this variable is specified, it
+            should point to a file that defines the credentials. The simplest way to get a credential for this purpose
+            is to create a service account using the
+            <a href="https://console.developers.google.com">Google Developers Console</a> in the section APIs &amp;
+            Auth, in the sub-section Credentials. Create a service account or choose an existing one and select
+            Generate new JSON key. Set the environment variable to the path of the JSON file downloaded.
+            </description>
             </item>
             <item>
-            <description>If all previous steps have failed, <c>InvalidOperationException</c> is thrown.</description>
+            <description>
+            If you have installed the Google Cloud SDK on your machine and have run the command
+            <a href="https://cloud.google.com/sdk/gcloud/reference/auth/login">GCloud Auth Login</a>, your identity can
+            be used as a proxy to test code calling APIs from that machine.
+            </description>
+            </item>
+            <item>
+            <description>
+            If you are running in Google Compute Engine production, the built-in service account associated with the
+            virtual machine instance will be used.
+            </description>
+            </item>
+            <item>
+            <description>
+            If all previous steps have failed, <c>InvalidOperationException</c> is thrown.
+            </description>
             </item>
             </list>
             </summary>
@@ -61,44 +70,58 @@
             </para>
             </summary>
         </member>
-        <member name="M:Google.Apis.Auth.OAuth2.GoogleCredential.CreateScoped(System.Collections.Generic.IEnumerable{System.String})">
-            <summary>If the credential supports scopes, creates a copy with the specified scopes, otherwise it returns the same instance.</summary>
-        </member>
-        <member name="M:Google.Apis.Auth.OAuth2.GoogleCredential.FromCredential(Google.Apis.Auth.OAuth2.ServiceAccountCredential)">
-            <summary>Creates a <c>GoogleCredential</c> wrapping a <see cref="T:Google.Apis.Auth.OAuth2.ServiceAccountCredential"/>.</summary>
-        </member>
         <member name="P:Google.Apis.Auth.OAuth2.GoogleCredential.IsCreateScopedRequired">
              <summary>
-             <para>Returns <c>true</c> only if this credential type has no scopes by default and requires 
-             a call to <see cref="M:Google.Apis.Auth.OAuth2.GoogleCredential.CreateScoped(System.Collections.Generic.IEnumerable{System.String})"/> before use.</para>
+             <para>Returns <c>true</c> only if this credential type has no scopes by default and requires
+             a call to <see cref="o:CreateScoped"/> before use.</para>
             
-             <para>Credentials need to have scopes in them before they can be used to access Google services. 
-             Some Credential types have scopes built-in, and some dont. This property indicates whether 
+             <para>Credentials need to have scopes in them before they can be used to access Google services.
+             Some Credential types have scopes built-in, and some don't. This property indicates whether
              the Credential type has scopes built-in.</para>
              
              <list type="number">
-             <item> 
-             <description><see cref="T:Google.Apis.Auth.OAuth2.ComputeCredential"/> has scopes built-in. Nothing additional is required.</description> 
-             </item> 
-             <item> 
-             <description><see cref="T:Google.Apis.Auth.OAuth2.UserCredential"/> has scopes built-in, as they were obtained during the consent 
-             screen. Nothing additional is required.</description> 
-             </item> 
-             <item> 
-             <description><see cref="T:Google.Apis.Auth.OAuth2.ServiceAccountCredential"/> does not have scopes built-in by default. Caller should 
-             invoke <see cref="M:Google.Apis.Auth.OAuth2.GoogleCredential.CreateScoped(System.Collections.Generic.IEnumerable{System.String})"/> to add scopes to the credential.</description> 
-             </item> 
+             <item>
+             <description>
+             <see cref="T:Google.Apis.Auth.OAuth2.ComputeCredential"/> has scopes built-in. Nothing additional is required.
+             </description>
+             </item>
+             <item>
+             <description>
+             <see cref="T:Google.Apis.Auth.OAuth2.UserCredential"/> has scopes built-in, as they were obtained during the consent
+             screen. Nothing additional is required.</description>
+             </item>
+             <item>
+             <description>
+             <see cref="T:Google.Apis.Auth.OAuth2.ServiceAccountCredential"/> does not have scopes built-in by default. Caller should
+             invoke <see cref="o:CreateScoped"/> to add scopes to the credential.
+             </description>
+             </item>
              </list>
              </summary>
+        </member>
+        <member name="M:Google.Apis.Auth.OAuth2.GoogleCredential.CreateScoped(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            If the credential supports scopes, creates a copy with the specified scopes. Otherwise, it returns the same
+            instance.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Auth.OAuth2.GoogleCredential.CreateScoped(System.String[])">
+            <summary>
+            If the credential supports scopes, creates a copy with the specified scopes. Otherwise, it returns the same
+            instance.
+            </summary>
         </member>
         <member name="P:Google.Apis.Auth.OAuth2.GoogleCredential.UnderlyingCredential">
             <summary>Provides access to the underlying credential object</summary>
         </member>
+        <member name="M:Google.Apis.Auth.OAuth2.GoogleCredential.FromCredential(Google.Apis.Auth.OAuth2.ServiceAccountCredential)">
+            <summary>Creates a <c>GoogleCredential</c> wrapping a <see cref="T:Google.Apis.Auth.OAuth2.ServiceAccountCredential"/>.</summary>
+        </member>
         <member name="T:Google.Apis.Auth.OAuth2.GoogleCredential.ServiceAccountGoogleCredential">
             <summary>
             Wraps <c>ServiceAccountCredential</c> as <c>GoogleCredential</c>.
-            We need this subclass because wrapping <c>ServiceAccountCredential</c> (unlike other wrapped credential types)
-            requires special handling for <c>IsCreateScopedRequired</c> and <c>CreateScoped</c> members.
+            We need this subclass because wrapping <c>ServiceAccountCredential</c> (unlike other wrapped credential
+            types) requires special handling for <c>IsCreateScopedRequired</c> and <c>CreateScoped</c> members.
             </summary>
         </member>
         <member name="T:Google.Apis.Auth.OAuth2.DefaultCredentialProvider">
@@ -109,7 +132,9 @@
             </summary>
         </member>
         <member name="F:Google.Apis.Auth.OAuth2.DefaultCredentialProvider.CredentialEnvironmentVariable">
-            <summary>Environment variable override which stores the default application credentials file path.</summary>
+            <summary>
+            Environment variable override which stores the default application credentials file path.
+            </summary>
         </member>
         <member name="F:Google.Apis.Auth.OAuth2.DefaultCredentialProvider.WellKnownCredentialsFile">
             <summary>Well known file which stores the default application credentials.</summary>
@@ -167,10 +192,16 @@
             </summary>
         </member>
         <member name="M:Google.Apis.Auth.OAuth2.DefaultCredentialProvider.GetEnvironmentVariable(System.String)">
-            <summary>Gets the environment variable. This method is protected so it could be overriden for testing purposes only.</summary>
+            <summary>
+            Gets the environment variable. 
+            This method is protected so it could be overriden for testing purposes only.
+            </summary>
         </member>
         <member name="M:Google.Apis.Auth.OAuth2.DefaultCredentialProvider.GetStream(System.String)">
-            <summary>Opens file as a stream. This method is protected so it could be overriden for testing purposes only.</summary>
+            <summary>
+            Opens file as a stream.
+            This method is protected so it could be overriden for testing purposes only.
+            </summary>
         </member>
         <member name="T:Google.Apis.Auth.OAuth2.GoogleWebAuthorizationBroker">
             <summary>A helper utility to manage the authorization code flow.</summary>
@@ -223,7 +254,7 @@
             updated. </param>
             <param name="taskCancellationToken">Cancellation token to cancel an operation.</param>
         </member>
-        <member name="M:Google.Apis.Auth.OAuth2.GoogleWebAuthorizationBroker.AuthorizeAsyncCore(Google.Apis.Auth.OAuth2.Flows.GoogleAuthorizationCodeFlow.Initializer,System.Collections.Generic.IEnumerable{System.String},System.String,System.Threading.CancellationToken,Google.Apis.Util.Store.IDataStore)">
+        <member name="M:Google.Apis.Auth.OAuth2.GoogleWebAuthorizationBroker.AuthorizeAsync(Google.Apis.Auth.OAuth2.Flows.GoogleAuthorizationCodeFlow.Initializer,System.Collections.Generic.IEnumerable{System.String},System.String,System.Threading.CancellationToken,Google.Apis.Util.Store.IDataStore)">
             <summary>The core logic for asynchronously authorizing the specified user.</summary>
             <param name="initializer">The authorization code initializer.</param>
             <param name="scopes">
@@ -271,8 +302,62 @@
             </para>
             </summary>
         </member>
+        <member name="T:Google.Apis.Auth.OAuth2.ServiceAccountCredential.Initializer">
+            <summary>An initializer class for the service account credential. </summary>
+        </member>
+        <member name="P:Google.Apis.Auth.OAuth2.ServiceAccountCredential.Initializer.Id">
+            <summary>Gets the service account ID (typically an e-mail address).</summary>
+        </member>
+        <member name="P:Google.Apis.Auth.OAuth2.ServiceAccountCredential.Initializer.User">
+            <summary>
+            Gets or sets the email address of the user the application is trying to impersonate in the service 
+            account flow or <c>null</c>.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Auth.OAuth2.ServiceAccountCredential.Initializer.Scopes">
+            <summary>Gets the scopes which indicate API access your application is requesting.</summary>
+        </member>
+        <member name="P:Google.Apis.Auth.OAuth2.ServiceAccountCredential.Initializer.Key">
+            <summary>
+            Gets or sets the key which is used to sign the request, as specified in
+            https://developers.google.com/accounts/docs/OAuth2ServiceAccount#computingsignature.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Auth.OAuth2.ServiceAccountCredential.Initializer.#ctor(System.String)">
+            <summary>Constructs a new initializer using the given id.</summary>
+        </member>
+        <member name="M:Google.Apis.Auth.OAuth2.ServiceAccountCredential.Initializer.#ctor(System.String,System.String)">
+            <summary>Constructs a new initializer using the given id and the token server URL.</summary>
+        </member>
+        <member name="M:Google.Apis.Auth.OAuth2.ServiceAccountCredential.Initializer.FromPrivateKey(System.String)">
+            <summary>Extracts the <see cref="P:Google.Apis.Auth.OAuth2.ServiceAccountCredential.Initializer.Key"/> from the given PKCS8 private key.</summary>
+        </member>
+        <member name="M:Google.Apis.Auth.OAuth2.ServiceAccountCredential.Initializer.FromCertificate(System.Security.Cryptography.X509Certificates.X509Certificate2)">
+            <summary>Extracts a <see cref="P:Google.Apis.Auth.OAuth2.ServiceAccountCredential.Initializer.Key"/> from the given certificate.</summary>
+        </member>
         <member name="F:Google.Apis.Auth.OAuth2.ServiceAccountCredential.UnixEpoch">
             <summary>Unix epoch as a <c>DateTime</c></summary>
+        </member>
+        <member name="P:Google.Apis.Auth.OAuth2.ServiceAccountCredential.Id">
+            <summary>Gets the service account ID (typically an e-mail address).</summary>
+        </member>
+        <member name="P:Google.Apis.Auth.OAuth2.ServiceAccountCredential.User">
+            <summary>
+            Gets the email address of the user the application is trying to impersonate in the service account flow 
+            or <c>null</c>.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Auth.OAuth2.ServiceAccountCredential.Scopes">
+            <summary>Gets the service account scopes.</summary>
+        </member>
+        <member name="P:Google.Apis.Auth.OAuth2.ServiceAccountCredential.Key">
+            <summary>
+            Gets the key which is used to sign the request, as specified in
+            https://developers.google.com/accounts/docs/OAuth2ServiceAccount#computingsignature.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Auth.OAuth2.ServiceAccountCredential.HasScopes">
+            <summary><c>true</c> if this credential has any scopes associated with it.</summary>
         </member>
         <member name="M:Google.Apis.Auth.OAuth2.ServiceAccountCredential.#ctor(Google.Apis.Auth.OAuth2.ServiceAccountCredential.Initializer)">
             <summary>Constructs a new service account credential using the given initializer.</summary>
@@ -317,7 +402,9 @@
             </summary>
         </member>
         <member name="M:Google.Apis.Auth.OAuth2.ServiceAccountCredential.ConvertPKCS8ToRSAParameters(System.String)">
-            <summary>Converts the PKCS8 private key to RSA parameters. This method uses the Bouncy Castle library.</summary>
+            <summary>
+            Converts the PKCS8 private key to RSA parameters. This method uses the Bouncy Castle library.
+            </summary>
         </member>
         <member name="M:Google.Apis.Auth.OAuth2.ServiceAccountCredential.CreatePayload">
             <summary>
@@ -334,60 +421,6 @@
             <summary>Encodes the byte array into an URL safe base64 string.</summary>
             <param name="bytes">Byte array to encode.</param>
             <returns>The URL safe base64 string.</returns>
-        </member>
-        <member name="P:Google.Apis.Auth.OAuth2.ServiceAccountCredential.Id">
-            <summary>Gets the service account ID (typically an e-mail address).</summary>
-        </member>
-        <member name="P:Google.Apis.Auth.OAuth2.ServiceAccountCredential.User">
-            <summary>
-            Gets the email address of the user the application is trying to impersonate in the service account flow 
-            or <c>null</c>.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Auth.OAuth2.ServiceAccountCredential.Scopes">
-            <summary>Gets the service account scopes.</summary>
-        </member>
-        <member name="P:Google.Apis.Auth.OAuth2.ServiceAccountCredential.Key">
-            <summary>
-            Gets the key which is used to sign the request, as specified in
-            https://developers.google.com/accounts/docs/OAuth2ServiceAccount#computingsignature.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Auth.OAuth2.ServiceAccountCredential.HasScopes">
-            <summary><c>true</c> if this credential has any scopes associated with it.</summary>
-        </member>
-        <member name="T:Google.Apis.Auth.OAuth2.ServiceAccountCredential.Initializer">
-            <summary>An initializer class for the service account credential. </summary>
-        </member>
-        <member name="M:Google.Apis.Auth.OAuth2.ServiceAccountCredential.Initializer.#ctor(System.String)">
-            <summary>Constructs a new initializer using the given id.</summary>
-        </member>
-        <member name="M:Google.Apis.Auth.OAuth2.ServiceAccountCredential.Initializer.#ctor(System.String,System.String)">
-            <summary>Constructs a new initializer using the given id and the token server URL.</summary>
-        </member>
-        <member name="M:Google.Apis.Auth.OAuth2.ServiceAccountCredential.Initializer.FromPrivateKey(System.String)">
-            <summary>Extracts the <see cref="P:Google.Apis.Auth.OAuth2.ServiceAccountCredential.Initializer.Key"/> from the given PKCS8 private key.</summary>
-        </member>
-        <member name="M:Google.Apis.Auth.OAuth2.ServiceAccountCredential.Initializer.FromCertificate(System.Security.Cryptography.X509Certificates.X509Certificate2)">
-            <summary>Extracts a <see cref="P:Google.Apis.Auth.OAuth2.ServiceAccountCredential.Initializer.Key"/> from the given certificate.</summary>
-        </member>
-        <member name="P:Google.Apis.Auth.OAuth2.ServiceAccountCredential.Initializer.Id">
-            <summary>Gets the service account ID (typically an e-mail address).</summary>
-        </member>
-        <member name="P:Google.Apis.Auth.OAuth2.ServiceAccountCredential.Initializer.User">
-            <summary>
-            Gets or sets the email address of the user the application is trying to impersonate in the service 
-            account flow or <c>null</c>.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Auth.OAuth2.ServiceAccountCredential.Initializer.Scopes">
-            <summary>Gets the scopes which indicate API access your application is requesting.</summary>
-        </member>
-        <member name="P:Google.Apis.Auth.OAuth2.ServiceAccountCredential.Initializer.Key">
-            <summary>
-            Gets or sets the key which is used to sign the request, as specified in
-            https://developers.google.com/accounts/docs/OAuth2ServiceAccount#computingsignature.
-            </summary>
         </member>
     </members>
 </doc>

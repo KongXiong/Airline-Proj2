@@ -32,7 +32,7 @@ namespace WpfApplication2
                 {"LGA", 736}
             };
         List<string> portList = new List<string>();
-        public List<string> originList =new List<string> { "mke" };
+        public List<string> originList =new List<string> { "MKE" };
         public List<string> seatClass = new List<string> { "First Class", "Coach", "Economy" };
 
         public List<string> giveList()

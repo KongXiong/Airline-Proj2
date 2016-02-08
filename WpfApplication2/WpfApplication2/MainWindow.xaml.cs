@@ -37,7 +37,7 @@ namespace WpfApplication2
         private void button1_Click_1(object sender, RoutedEventArgs e)
         {
             string loginWPF = textBox1.Text;
-            string passWPF = textBox2.Text;
+            string passWPF = textBox2.Password;
             login_pass userLogin = new login_pass();
             bool access = userLogin.readFile(loginWPF, passWPF);
             if (access == true)

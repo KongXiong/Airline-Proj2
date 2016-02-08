@@ -84,7 +84,8 @@
     <Compile Include="Airplane.cs" />
     <Compile Include="Columns.cs" />
     <Compile Include="EmailReceipt.cs" />
-    <Compile Include="FileReader.cs" />
+    <Compile Include="FileReadOutputJSON.cs" />
+    <Compile Include="FileReadPsngrJSON.cs" />
     <Compile Include="FileWriter.cs" />
     <Compile Include="Flight Trip.cs" />
     <Compile Include="Flight.cs" />

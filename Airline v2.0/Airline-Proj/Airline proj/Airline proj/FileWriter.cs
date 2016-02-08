@@ -17,14 +17,6 @@ namespace Airline_proj
             List<Passenger> psngrData = new List<Passenger>();
             Passenger passenger = new Passenger(fullName, travelDate, seatNumber, destination, origin);
             psngrData.Add(passenger);
-            //FileReader FR = new FileReader();
-            //Passenger.Add(fullName);
-            //Passenger.Add(travelDate);
-            //Passenger.Add(seatNumber);
-            //Passenger.Add(destination);
-            //string json = JsonConvert.SerializeObject(Passenger.ToArray(), Formatting.Indented);
-            //File.AppendAllText("Passengers.json", json);
-            //passengerData.Add(pss);
 
             string readFile = File.ReadAllText("Passengers.json");
             List<Passenger> fileReadList = JsonConvert.DeserializeObject<List<Passenger>>(readFile);
@@ -36,24 +28,9 @@ namespace Airline_proj
         }
         public void PsgInfo()
         {
-            //Passenger pss = new Passenger();
-
-            //Console.WriteLine("Please enter your Name:");
-            //pss.GetName(Console.ReadLine());
-
-            //Console.WriteLine("Please enter your Age:");
-            //pss.GetAge(Convert.ToInt32(Console.ReadLine()));
-
-            //Console.WriteLine("Please enter Origin:");
-            //pss.GetOrigin(Console.ReadLine());
-
-            //Console.WriteLine("Please enter your Destination:");
-            //pss.GetDestination(Console.ReadLine());
-
             List<Passenger> passengerData = new List<Passenger>();
-            //passengerData.Add(pss);
 
-            FileReader FR = new FileReader();
+            FileReadPsngrJSON FR = new FileReadPsngrJSON();
             List<Passenger> fileReadList = FR.LoadJson();
             passengerData.AddRange(fileReadList);
 

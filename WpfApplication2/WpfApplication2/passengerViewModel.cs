@@ -12,7 +12,7 @@ namespace WpfApplication2
         public passengerViewModel()
         {
             List<Passenger> psngrs = new List<Passenger>();
-            FileReader FileRead = new FileReader();
+            FileReadPsngrJSON FileRead = new FileReadPsngrJSON();
 
             psngrs = FileRead.LoadJson();
             readJSONFile = new ObservableCollection<Passenger>(psngrs);
